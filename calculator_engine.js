@@ -7,17 +7,6 @@ let frt = document.getElementById('frt');
 let ins = document.getElementById('ins') ;
 
 
-/*
-let c_value = document.getElementById("cif").value="";
-let hd =document.getElementById("hs").value="";
-let seating =Number(document.getElementById("seats").value)=0;
-let v_age =document.getElementById("age").value;
-let cc =Number(document.getElementById("cc_s").value);
-let tonnage =Number(document.getElementById("weight").value);
-let option =document.getElementById("options").value;
-let v_source =document.getElementById("source").value;
-*/
-
 let _date = new Date();
 let stringDate = _date.toString();
 let theDate = stringDate.slice(0,15);
@@ -28,6 +17,8 @@ let theDate = stringDate.slice(0,15);
    title.style.textAlign="center";
 
 let moneyfm = new Intl.NumberFormat("en-VC", {style:"currency", currency: "XCD"});
+
+document.getElementById("importer").focus();
 
 document.getElementById("importer").addEventListener("keyup",e=>{
       
