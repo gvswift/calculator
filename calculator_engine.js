@@ -7,6 +7,8 @@ let frt = document.getElementById('frt');
 let ins = document.getElementById('ins') ;
 
 
+
+
 let _date = new Date();
 let stringDate = _date.toString();
 let theDate = stringDate.slice(0,15);
@@ -26,12 +28,12 @@ document.getElementById("importer").addEventListener("keyup",e=>{
      document.getElementById("importer").value.toUpperCase();
       
 })
- 
-document.getElementById("importer").addEventListener("keydown", e =>{
-if(e.keyCode === 13){
-document.getElementById("fob").focus();
-}
-})
+
+document.getElementById("importer").addEventListener("keydown",(e)=>{
+     if(e.key === 'Enter') {
+      document.getElementById("fob").focus();
+     }       
+ })
 
 function getTotal() { 
   CIF = document.getElementById("cif");
@@ -115,7 +117,7 @@ function getTotal() {
 
 
 document.getElementById("fob").addEventListener("keydown",e=>{
-    if(e.keyCode === 13){
+    if(e.key === 'Enter'){
          document.getElementById("fob").value = Number(fob.value).toFixed(2) ;
           if(terms.value === "cif"){
                 document.getElementById("total_button").focus();
@@ -128,7 +130,7 @@ document.getElementById("fob").addEventListener("keydown",e=>{
 })
 
 document.getElementById("frt").addEventListener("keydown", e =>{
-if(e.keyCode === 13){
+if(e.key === 'Enter'){
   let frtv = Number(document.getElementById("frt").value);
 frt.value = frtv.toFixed(2);
 document.getElementById("ins").focus();
@@ -156,7 +158,7 @@ function autoInsurance(){
 	
 
 document.getElementById("ins").addEventListener("keydown", e =>{
-      if(e.keyCode === 13){
+      if(e.key === 'Enter'){
         let insv = Number(document.getElementById("ins").value);
       ins.value = insv.toFixed(2);
         document.getElementById("total_button").focus();
@@ -197,15 +199,6 @@ else{
 }
 }
 
-/*
-document.getElementById("ins").addEventListener("keydown", e =>{
-if(e.keyCode === 13){
-  let insv = Number(document.getElementById("ins").value);
-ins.value = insv.toFixed(2);
-  document.getElementById("total_button").focus();
-}
-})
-*/
  function resetValues(){
   let valueInput= document.querySelectorAll(".value_Input");
   valueInput.forEach((e)=>{
@@ -236,7 +229,7 @@ ins.value = insv.toFixed(2);
      })
 
  document.getElementById("make").addEventListener("keydown",e =>{
-  if(e.keyCode === 13){
+  if(e.key === 'Enter'){
     document.getElementById("model").focus();
   }
  })
@@ -248,7 +241,7 @@ ins.value = insv.toFixed(2);
      })
 
   document.getElementById("model").addEventListener("keydown",e =>{
-  if(e.keyCode === 13){
+  if(e.key === "Enter"){
     document.getElementById("chassis").focus();
 
   }
@@ -261,13 +254,13 @@ ins.value = insv.toFixed(2);
      })
 
  document.getElementById("chassis").addEventListener("keydown",e =>{
-  if(e.keyCode === 13){
+  if(e.key === "Enter"){
     document.getElementById("year").focus();
   }
  })
 
  document.getElementById("year").addEventListener("keydown",e =>{
-  if(e.keyCode === 13){
+  if(e.key === "Enter"){
     let thisYear = Number(_date.getFullYear());    
     let vehicleYear = Number(document.getElementById("year").value);
     if(vehicleYear > thisYear) {
@@ -304,7 +297,7 @@ ins.value = insv.toFixed(2);
      })
 
  document.getElementById("cc_s").addEventListener("keydown",e =>{
-  if(e.keyCode === 13){
+  if(e.key === "Enter"){
      document.getElementById("hs").focus();
      resetAllDuties();
   }
@@ -312,7 +305,7 @@ ins.value = insv.toFixed(2);
 
 
  document.getElementById("seats").addEventListener("keydown", e =>{
-  if(e.keyCode === 13){
+  if(e.key === "Enter"){
     document.getElementById("hs").focus();
     resetAllDuties();
   }
@@ -328,7 +321,7 @@ ins.value = insv.toFixed(2);
      })
 
  document.getElementById("weight").addEventListener("keydown", e =>{
-  if(e.keyCode === 13){
+  if(e.key === "Enter"){
     resetAllDuties();
     document.getElementById("hs").focus();
   }
@@ -387,11 +380,9 @@ function heading_Duty(){
       if(hd ==="8701"){
             if(v_age === "" || c_value === ""){
                   alert("Customs value and Vehicle age are required for heading 8701.");
-                  console.log(hd);
                   hs.value = "";
                   resetAllDuties();
                   document.getElementById("year").focus();
-                  console.log(cifec);
 
             }else if(v_source === "dumper"){
                   alert(`Dumper does not belong to \"8701\". Please try \"8704\". 
@@ -401,7 +392,7 @@ You may also choose another 'source'. `);
                   document.getElementById("source").focus();
 
 
-            }else{baseIDRate = 5;
+            }else{baseIDRate = 5.00;
                   baseETRate = 35.00;
                   baseCSCRate = 6.00;
                   baseVATBase = (cifec *baseIDRate/100) + (cifec *baseETRate/100) + (cifec * baseCSCRate/100) +
@@ -488,8 +479,6 @@ You may also choose another 'source'. `);
                         baseVATRate = 16.00;
 
                   }else{
-                        //let cci = (vehicle) => vehicle.ccs <= cc;
-
                         if(v_source === "gas"){
                               let x = gas8703_Rates.findLastIndex((vehicle) => vehicle.ccs <= cc); 
     
@@ -529,7 +518,6 @@ You may also choose another 'source'. `);
                   hs.value = "";
                   resetAllDuties();
                   document.getElementById("weight").focus();
-                  console.log(hs.value);
 
             }else{
                   if(v_source ==="electric"){
@@ -549,8 +537,6 @@ You may also choose another 'source'. `);
                         baseVATRate = 16.00;
 
                   }else{
-                       // let ti = (vehicle) => vehicle.ton <= tons;
-
                         if (v_source === "gas"  || v_source === "diesel"){
                               let t = gasOrDiesel8704_Rates.findLastIndex((vehicle) => vehicle.ton <= tonnage);
          
@@ -589,7 +575,6 @@ You may also choose another 'source'. `);
                   hs.value = "";
                   resetAllDuties();
                   document.getElementById("options").focus();
-                  console.log(hs.value);
 
             }else if(v_source === "dumper"){
                   alert(`Dumper does not belong to \"8705\". Please try \"8704\". 
@@ -833,21 +818,21 @@ CIF Factor :${cifFactor}`);
 }
   
   document.getElementById("iduty_Waiver").addEventListener("keydown", e =>{
-      if(e.keyCode === 13){
+      if(e.key === "Enter"){
         document.getElementById("etax_Waiver").focus();
 
       }
      })
 
      document.getElementById("etax_Waiver").addEventListener("keydown", e =>{
-      if(e.keyCode === 13){
+      if(e.key === "Enter"){
         document.getElementById("csc_Waiver").focus();
 
       }
      })
 
      document.getElementById("csc_Waiver").addEventListener("keydown", e =>{
-      if(e.keyCode === 13){
+      if(e.key === "Enter"){
         document.getElementById("vs_Waiver").focus();
 
       }
@@ -855,7 +840,7 @@ CIF Factor :${cifFactor}`);
 
 
      document.getElementById("vs_Waiver").addEventListener("keydown", e =>{
-      if(e.keyCode === 13){
+      if(e.key === "Enter"){
          document.getElementById("vat_Waiver").focus();
          
       }
