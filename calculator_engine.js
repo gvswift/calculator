@@ -35,20 +35,13 @@ document.getElementById("importer").addEventListener("keyup",e=>{
      document.getElementById("importer").value.toUpperCase();
       
 })
-/*
-function resetValues(){
-      let valueInput= document.querySelectorAll(".value_Input");
-      valueInput.forEach((e)=>{
-        e.value = "";
-      })
-      document.getElementById("fob").disabled = false;
-      document.getElementById("frt").disabled = false;
-      document.getElementById("ins").disabled = false;
-      cifec = 0;
-      resetAllDuties();
-    
-     }  
-*/
+ 
+document.getElementById("importer").addEventListener("keydown", e =>{
+if(e.KeyCode === 13){
+document.getElementById("fob").focus();
+}
+})
+
 function getTotal() { 
   CIF = document.getElementById("cif");
   
