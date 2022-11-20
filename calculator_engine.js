@@ -37,7 +37,7 @@ document.getElementById("importer").addEventListener("keyup",e=>{
 })
  
 document.getElementById("importer").addEventListener("keydown", e =>{
-if(e.KeyCode === 13){
+if(e.keyCode === 13){
 document.getElementById("fob").focus();
 }
 })
