@@ -650,7 +650,8 @@ You may also choose another 'source'. `);
 
       baseSurcharge = surcharge_base * age_factor * seating_capacity_factor * cifFactor;
 
-      alert(`Base Surcharge :${surcharge_base}
+      alert(`Vehicle Surcharge-/(multiply following factors/):
+Base Surcharge :${surcharge_base}
 Age Factor: ${age_factor}
 Seating Capacity Factor: ${seating_capacity_factor}
 CIF Factor : ${cifFactor}`);
