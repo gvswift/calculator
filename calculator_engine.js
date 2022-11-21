@@ -650,7 +650,7 @@ You may also choose another 'source'. `);
 
       baseSurcharge = surcharge_base * age_factor * seating_capacity_factor * cifFactor;
 
-      alert(`Vehicle Surcharge-/(multiply following factors/):
+      alert(`Vehicle Surcharge-(multiply following factors):
 Base Surcharge :${surcharge_base}
 Age Factor: ${age_factor}
 Seating Capacity Factor: ${seating_capacity_factor}
@@ -675,7 +675,8 @@ CIF Factor : ${cifFactor}`);
 
               baseSurcharge = surcharge_base * age_factor * engineSizeFactor * cifFactor;
 
-              alert(`Base Surcharge :${surcharge_base}
+              alert(`Vehicle Surcharge-(multiply following factors):
+Base Surcharge :${surcharge_base}
 Age factor :${age_factor}
 Engine Size Factor :${engineSizeFactor}
 CIF Factor :${cifFactor}`);
@@ -690,7 +691,8 @@ CIF Factor :${cifFactor}`);
 
               baseSurcharge = surcharge_base * age_factor * range_factor * cifFactor;
 
-              alert(`Base Surcharge : ${surcharge_base}
+              alert(`Vehicle Surcharge-(multiply following factors):
+Base Surcharge : ${surcharge_base}
 Age Factor :${age_factor}
 Range Factor :${range_factor}
 CIF Factor :${cifFactor} `);
@@ -701,7 +703,8 @@ CIF Factor :${cifFactor} `);
 
             baseSurcharge = surcharge_base * age_factor * classification_factor * cifFactor;
 
-            alert(`Base Surcharge :${surcharge_base}
+            alert(`Vehicle Surcharge-(multiply following factors):
+Base Surcharge :${surcharge_base}
 Age Factor :${age_factor}
 Classification Factor :${classification_factor}
 CIF Factor :${cifFactor}`);
@@ -723,7 +726,8 @@ CIF Factor :${cifFactor}`);
 
       baseSurcharge = surcharge_base * age_factor * tonnage_factor * cifFactor;
 
-      alert(`Base Surcharge :${surcharge_base}
+      alert(`Vehicle Surcharge-(multiply following factors):
+Base Surcharge :${surcharge_base}
 Age Factor :${age_factor}
 Tonnage Factor :${tonnage_factor}
 CIF Factor :${cifFactor}`);
@@ -742,7 +746,8 @@ CIF Factor :${cifFactor}`);
 
           baseSurcharge = surcharge_base * age_factor * cifFactor;
 
-          alert(`Base Surcharge :${surcharge_base}
+          alert(`Vehicle Surcharge-(multiply following factors):
+Base Surcharge :${surcharge_base}
 Age Factor :${age_factor}
 Special Purpose Factor :${specialPurposeFactor}
 CIF Factor :${cifFactor}`);
@@ -759,7 +764,8 @@ CIF Factor :${cifFactor}`);
 
       baseSurcharge = surcharge_base * age_factor * specialPurposeFactor * cifFactor;
 
-      alert(`Base Surcharge :${surcharge_base}
+      alert(`Vehicle Surcharge-(multiply following factors):
+Base Surcharge :${surcharge_base}
 Age Factor :${age_factor}
 Special Purpose Factor :${specialPurposeFactor}
 CIF Factor :${cifFactor}`);
