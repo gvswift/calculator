@@ -1,0 +1,328 @@
+ #importer-box{
+  
+  height:25px;
+  width: 480px;
+  padding-left:10px;
+  margin:auto;
+  margin-bottom: 10px;
+
+
+} 
+#container-val{
+  height:165px;
+  width: 480px;
+  padding-left:10px;
+  margin:auto;
+  border: none;
+} 
+
+#container-spec{
+  height:240px;
+  width: 480px;
+   padding-left:10px;
+     margin:auto;
+} 
+
+#container-duties{
+  height:325px;
+  width: 480px;
+   padding-left:10px;
+     margin:auto;
+} 
+
+#datelabel {
+  font-size:16px;
+  margin-left: auto;
+  margin-right:auto;
+  display:block;
+  font-weight:bold;
+  margin-top:0 px;
+  margin-bottom:10px;
+}
+
+#titlelabel{
+  font-size:24px;
+  font-weight: bold;
+  margin-left:auto;
+  margin-right:auto;
+  display:block;
+  margin-top:0 px;
+  mar
+}
+/*
+main container : position to transform new */
+
+#importerL{
+  margin-right:15px;
+  display:inline;
+}
+.importer {
+  width:384px;
+  font-weight:bold;
+  font-size:14px;
+  padding-top:3px
+}
+
+ .main-container {  
+  background-color: aqua;
+  width:600px;
+  display:grid;
+  margin: auto;
+  border:5px solid #912121;
+  padding:0px;
+  height:900px;
+ 
+}  
+
+#ownerL {
+  font-weight: bold;
+  font-size:14px;
+  text-align:center;
+  margin-bottom: 10px;
+  
+  margin-top: 0px;
+  margin-left:auto;
+  margin-right:auto;
+  display:block;
+}
+
+.costL{
+  margin-left:20px;
+}
+
+#fob{
+  margin-left:38px;
+  margin-right: 7px;
+  margin-bottom: 5px;
+  width:100px;
+  text-align:right;
+}
+
+#frt{
+  margin-left:21px;
+  margin-bottom: 5px;
+  width:100px;
+  text-align:right;
+}
+
+#ins{
+  width:100px;
+  margin-left: 5px;
+  margin-bottom: 5px;
+  text-align:right;
+}
+
+#autoIns{
+  padding-top: 0px;
+  margin-top: 0px;
+
+}
+
+#cif{
+  text-align:right;
+  width:100px;
+  margin-left:10px;
+}
+
+
+.specL{
+  margin-left:20px;
+}
+
+#make {
+  margin-left:20px;
+  margin-bottom: 5px;
+}
+
+#model {
+  margin-left: 15px;
+  margin-bottom: 5px;
+}
+
+#chassis {
+  margin-left:8px;
+  margin-bottom: 5px;
+}
+
+#year {
+  margin-left:28px;
+  width:50px;
+  margin-right:85px;
+  text-align: right;
+  margin-bottom: 5px;
+}
+
+#age {
+  width:50px;
+  text-align: right;
+  margin-left: 30px;
+}
+
+#cc_s {
+  margin-left: 10px;
+  width:50px;
+  text-align: right;
+  margin-right:58px;
+  margin-bottom: 5px;
+}
+
+#source {
+  margin-right: 70PX;
+  margin-left: 9px;
+  margin-bottom: 5px;
+}
+
+
+#seats {
+  width: 70px;
+  margin-left: 9px;
+  text-align: right;
+}
+
+#hs {
+  margin-right: 55px;
+}
+
+#weight {
+  width: 80px;
+  margin-left: 8px;
+  text-align: right;
+}
+
+#options {
+  margin-left:10px;
+  width:130px;
+}
+
+.resetButton {
+  width:75px;
+  height:20px;
+  background-color: #e671d4;
+  margin-left: 107px;
+  border-radius: 10px;
+  border: none;
+}
+
+.printButton {
+  background-color: #f0dc40;
+}
+
+button {
+  background-color: rgb(24, 243, 123);
+  border:none;
+}
+
+.taxesL {
+  margin-left:40px;
+  margin-right:85px;
+}
+
+.rateL {
+  margin-right:60px;
+}
+
+.waiver{
+  margin-left: 390px;
+}
+.amountL {
+  margin-right:55px;
+}
+
+.taxL {
+  margin-left:20px;
+  width:100px;
+}
+
+
+.tax_Rate {
+  width:50px;
+  margin-right:20px;
+  text-align:center;
+}
+
+#iduty_Rate {
+  margin-left:50px;
+  margin-bottom: 5px;
+}
+
+#etax_Rate{
+  margin-left:59px;
+  margin-bottom: 5px;
+}
+
+#csc_Rate {
+  margin-left:87px;
+  margin-bottom: 5px;
+}
+
+#vat_Rate{
+  margin-left:18px;
+  margin-top: 5px;
+  margin-right: 23px;
+}
+
+.tax_Amount {
+  width:100px;
+  margin-right:30px;
+  text-align: right;
+}
+
+#vs_Amount{
+  margin-left:95px;
+  text-align: right;
+}
+
+.vb_Amount{
+  margin-left:10px;
+  width:103px;
+  text-align: right;
+}
+
+.tax_Waiver {
+  width:50px;
+  text-align: center;
+  
+}
+
+.total_DutiesInp {
+  text-align: right;
+  margin-left: 120px;
+  margin-right:30px;
+  width:100px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+input{
+  font-weight: bold;
+}
+.tc{
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 10px;
+  margin-right:40px;
+  margin-bottom: 10px;
+}
+.overAllCost{
+  width:100px;
+  margin-top: 10px;
+ /* margin-left: 50px;*/
+  margin-bottom: 10px;
+  font-weight:bold;
+  text-align: right;
+  font-size: 16px;
+  margin-left:90px;
+}
+#reset_Duties{
+  margin-bottom:10px;
+  margin-left: 30px;
+
+}
+
+@media print {
+
+
+  .resetButton, .printButton{
+        display:none;
+  }
+}
