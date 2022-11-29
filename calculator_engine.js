@@ -374,6 +374,7 @@ function resetAmounts(){
 
 function heading_Duty(){
      
+	calculateSurcharge();
      
      let c_value = document.getElementById("cif").value;
       let hd =document.getElementById("hs").value;
@@ -384,7 +385,6 @@ function heading_Duty(){
       let option =document.getElementById("options").value;
       let v_source =document.getElementById("source").value;
 	
-      calculateSurcharge();
 
       if(hd === ""){
             document.getElementById("waiver").disabled = true;
@@ -558,7 +558,7 @@ You may also choose another 'source'. `);
                               baseETRate = gasOrDiesel8704_Rates[t].rates[1];
                               baseCSCRate = 6.00
                               baseVATBase = (baseIDRate * cifec/100) + (baseETRate  * cifec/100) + 
-                                          (baseCSCRate * cifec/100) + cifec;
+                                          (baseCSCRate * cifec/100) + baseSurcharge + cifec;
                               baseVATRate = 16.00
          
                         } else if (v_source === "dumper"){
