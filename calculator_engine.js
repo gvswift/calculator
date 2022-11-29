@@ -383,6 +383,8 @@ function heading_Duty(){
       let tons =Number(document.getElementById("weight").value);
       let option =document.getElementById("options").value;
       let v_source =document.getElementById("source").value;
+	
+      calculateSurcharge();
 
       if(hd === ""){
             document.getElementById("waiver").disabled = true;
@@ -409,7 +411,7 @@ You may also choose another 'source'. `);
             }else{baseIDRate = 5.00;
                   baseETRate = 35.00;
                   baseCSCRate = 6.00;
-                  baseVATBase = (cifec *baseIDRate/100) + (cifec *baseETRate/100) + (cifec * baseCSCRate/100) +
+                  baseVATBase = (cifec *baseIDRate/100) + (cifec *baseETRate/100) + (cifec * baseCSCRate/100) + baseSurcharge +
                         cifec;
                   baseVATRate = 16.00;
 
@@ -420,7 +422,7 @@ You may also choose another 'source'. `);
                   document.getElementById("vb_Amount").value = moneyfm.format(baseVATBase); //baseVATBase.toFixed(2);
                   document.getElementById("vs_Amount").value = "";
 
-                  resetAmounts();
+                 
 
 
             }   
@@ -449,7 +451,7 @@ You may also choose another 'source'. `);
             }else{baseIDRate = 10.00;
                   baseETRate = 35.00;
                   baseCSCRate = 6.00;
-                  baseVATBase = (baseIDRate * cifec/100) + (baseETRate*cifec/100) + (baseCSCRate*cifec/100) +   
+                  baseVATBase = (baseIDRate * cifec/100) + (baseETRate*cifec/100) + (baseCSCRate*cifec/100) +  baseSurcharge + 
                         cifec;
                   baseVATRate = 16.00;
 
@@ -459,11 +461,7 @@ You may also choose another 'source'. `);
                   document.getElementById("vat_Rate").value = baseVATRate +"%";
                   document.getElementById("vb_Amount").value = moneyfm.format(baseVATBase); //baseVATBase.toFixed(2);
 
-                  resetAmounts();
-
-                  calculateSurcharge();
-
-            }
+                  }
       }else if (hd === "8703"){
             if(v_age === "" || c_value === "" || v_source === "" || cc < 0){
                   alert("Customs value, vehicle age, power source and cc's are required for heading 8703.");
@@ -493,7 +491,7 @@ You may also choose another 'source'. `);
                         baseIDRate = 30.00;
                         baseETRate = 30.00;
                         baseCSCRate = 6.00;
-                        baseVATBase = (baseIDRate * cifec/100) + (baseETRate*cifec/100) + (baseCSCRate*cifec/100) +
+                        baseVATBase = (baseIDRate * cifec/100) + (baseETRate*cifec/100) + (baseCSCRate*cifec/100) + baseSurcharge +
                          cifec;
                         baseVATRate = 16.00;
 
@@ -514,7 +512,7 @@ You may also choose another 'source'. `);
                               baseIDRate = diesel8703_Rates[x].rates[0];
                               baseETRate = diesel8703_Rates[x].rates[1];
                               baseCSCRate = 6.00;
-                              baseVATBase = (baseIDRate * cifec/100) + (baseETRate*cifec/100) + 
+                              baseVATBase = (baseIDRate * cifec/100) + (baseETRate*cifec/100) + baseSurcharge +
                                             (baseCSCRate*cifec/100) + cifec;
                               baseVATRate = 16.00;
                                    
@@ -526,11 +524,7 @@ You may also choose another 'source'. `);
                   document.getElementById("vat_Rate").value = baseVATRate +"%";
                   document.getElementById("vb_Amount").value = moneyfm.format(baseVATBase); //baseVATBase.toFixed(2);
 
-                  resetAmounts();
-
-                  calculateSurcharge();
-
-            }  
+                }  
       }else if (hd === "8704"){
             if(v_age === "" || cifec === 0 || tonnage <= 0 || v_source === ""){
                   alert("Customs value, vehicle age, power source and tonnage are required for heading 8704.");
@@ -544,7 +538,7 @@ You may also choose another 'source'. `);
                         baseIDRate = 10.00;
                         baseETRate = 30.00;
                         baseCSCRate = 6.00;
-                        baseVATBase = (baseIDRate * cifec/100) + (baseETRate*cifec/100) + 
+                        baseVATBase = (baseIDRate * cifec/100) + (baseETRate*cifec/100) + baseSurcharge +
                               (baseCSCRate * cifec/100) + cifec;
                         baseVATRate = 16.00;
     
@@ -552,7 +546,7 @@ You may also choose another 'source'. `);
                         baseIDRate = 10.00;
                         baseETRate = 60.00;
                         baseCSCRate = 6.00;
-                        baseVATBase = (baseIDRate * cifec/100) + (baseETRate*cifec/100) + (baseCSCRate*cifec/100) +
+                        baseVATBase = (baseIDRate * cifec/100) + (baseETRate*cifec/100) + (baseCSCRate*cifec/100) + baseSurcharge +
                            cifec;
                         baseVATRate = 16.00;
 
@@ -573,7 +567,7 @@ You may also choose another 'source'. `);
                               baseIDRate = dumper8704_Rates[d].rates[0];
                               baseETRate = dumper8704_Rates[d].rates[1];
                               baseCSCRate = 6.00
-                              baseVATBase = (baseIDRate * cifec/100) + (baseETRate  * cifec/100) +
+                              baseVATBase = (baseIDRate * cifec/100) + (baseETRate  * cifec/100) + baseSurcharge +
                                            (baseCSCRate  * cifec/100) +  cifec;
                               baseVATRate = 16.00
                         
@@ -584,10 +578,7 @@ You may also choose another 'source'. `);
                   document.getElementById("csc_Rate").value = baseCSCRate + "%";
                   document.getElementById("vat_Rate").value = baseVATRate +"%";
                   document.getElementById("vb_Amount").value = moneyfm.format(baseVATBase); //baseVATBase.toFixed(2);
-
-                  resetAmounts();
-
-                  calculateSurcharge();
+                         
             }
       } else if (hd === "8705"){
             if(v_age < 0 || c_value === "" || option === ""){
@@ -611,7 +602,7 @@ You may also choose another 'source'. `);
                         baseETRate = 0
                         baseCSCRate = 6.00
                         baseVATBase = (baseIDRate * cifec/100) + (baseETRate  * cifec/100) +
-                                      (baseCSCRate  * cifec/100) +  cifec;
+                                      (baseCSCRate  * cifec/100) + baseSurcharge + cifec;
                         baseVATRate = 16.00
     
                   } else {
@@ -619,7 +610,7 @@ You may also choose another 'source'. `);
                         baseETRate = 0
                         baseCSCRate = 6.00
                         baseVATBase = (baseIDRate * cifec/100) + (baseETRate  * cifec/100) +
-                                      (baseCSCRate  * cifec/100) +  cifec;
+                                      (baseCSCRate  * cifec/100) + baseSurcharge + cifec;
                         baseVATRate = 16.00
 
                   }
@@ -630,9 +621,7 @@ You may also choose another 'source'. `);
 				  .getElementById("vat_Rate").value = baseVATRate +"%";
                   document.getElementById("vb_Amount").value = moneyfm.format(baseVATBase); //baseVATBase.toFixed(2);
 
-                  resetAmounts();
-
-                  calculateSurcharge();
+                 
             }
     }
    
