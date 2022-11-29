@@ -483,7 +483,7 @@ You may also choose another 'source'. `);
                         baseIDRate = 20.00;
                         baseETRate = 20.00;
                         baseCSCRate = 6.00;
-                        baseVATBase = (baseIDRate * cifec/100) + (baseETRate*cifec/100) + (baseCSCRate*cifec/100) +
+                        baseVATBase = (baseIDRate * cifec/100) + (baseETRate*cifec/100) + (baseCSCRate*cifec/100) + baseSurcharge +
                         cifec;
                         baseVATRate = 16.00;
 
@@ -503,7 +503,7 @@ You may also choose another 'source'. `);
                               baseETRate = gas8703_Rates[x].rates[1];
                               baseCSCRate = 6.00;
                               baseVATBase = (baseIDRate * cifec/100) + (baseETRate*cifec/100) +
-                                             (baseCSCRate*cifec/100) + cifec;
+                                             (baseCSCRate*cifec/100) + baseSurcharge + cifec;
                               baseVATRate = 16.00;
                               
                         }else if(v_source === "diesel"){           
