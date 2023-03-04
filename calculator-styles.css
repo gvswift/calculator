@@ -73,6 +73,7 @@ body{
 }
 p{
     margin-bottom: 0px;
+    font-size:14px;
 }
 .section-label{
     display: block;
@@ -245,8 +246,22 @@ table{
 .oac {
     margin-left: 20px;
 }
+#vat-amount{
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-color: black;
+
+}
+.total-duties{
+    text-decoration-line: underline;
+    text-decoration-style: double;
+    text-decoration-color: black;
+}
 .over-all-cost{
     color:red;
+    text-decoration-line: underline;
+    text-decoration-style: double;
+    text-decoration-color: red;
 }
 .w-input {
 	text-align:center;
