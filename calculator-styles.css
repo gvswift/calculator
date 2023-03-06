@@ -268,7 +268,8 @@ p{
     .resetButton, .printButton, #guide {
         display:none;
     }
-   
+   body{
+	   align-items:start;
     }
-
+}
 
