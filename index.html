@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SVG Customs Vehicle Calculator</title>
+        <link rel="stylesheet" href="calculator-styles.css">
+    </head>
+    <body>
+        <div class="grid">
+            <div class="grid-item title" id="title">
+                <h3 class="title">SVG Customs Vehicle Duty Calculation</h3>
+            </div>
+            <div class="grid-item button-time">
+                <div class="reset">
+                    <button  class="resetButton" id="resetV" name="resetV" onclick="resetValues();">Reset</button>
+                </div>
+                <div>
+                     <p class="date" id="date" >Time and date goes here</p>
+                </div>
+                <div class="print">
+                    <button id="printButton" class="printButton" name="printButton" >Print</button>   
+                </div>
+            </div>
+            <div class="grid-item item-2">
+                <label class="importer-label">Importer :</label>
+                <input class="importer-in" id="importer" type="text"/>
+                <p class="declaration">This is an estimate of the customs duties payable on the vehicle specified below based on the value provided by the importer.</p>
+            </div>
+            <div class="grid-item value">
+                <div class="value-1">
+                    <label class="section-label"><u>Valuation</u></label>
+                </div>
+                <div class="cost-label-in">
+                    <table>
+                        <tr>
+                            <th class="value-label">Cost</th>
+                            <td><input class="val-in fob value-input" id="fob" type="number" placeholder="0"/></td>
+                        </tr>
+                        <tr>
+                            <th class="value-label">Freight</th>
+                            <td><input class="val-in frt value-input" id="frt" type="number" placeholder="0"/> </td>
+                        </tr>
+                        <tr>
+                            <th class="value-label">Insurance</th>
+                            <td>
+                                <input  class="val-in ins value-input" name="ins" id="ins" type="number" PLACEHOLDER="0"/>
+                                <input type="checkbox" id="autoIns" class="value-input" onclick="autoInsurance();" disabled><label>1% </label> 
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="value-label"><button class="total-btn" id="total_button" onClick="getTotal();">CIF EC $</button></th>
+                            <td> <input class="val-in cif value-input" id="cif" name="cif" type="text" disabled/> </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="value-2">
+                    <label class="T-and-C-label cur-label" for="currency">Currency</label>
+                    <select id="currency" name="currency" class=" T-and-C-in cur-in">
+                        <option value="">Select</option> 
+                        <option value="xcd">XCD</option>
+                        <option value="usd">USD</option>
+                    </select>
+                </div>             
+                <div class="value-3">
+                    <label class="T-and-C-label terms-label"  for="terms" class="termsL">Terms</label>
+                    <select id="terms" name="terms" class="T-and-C-in terms-in" onchange="termsFN()">
+                       <option value="">Select</option> 
+                        <option value="fob" >FOB</option>
+                        <option value="cfr">CFR</option>
+                        <option value="cif">CIF</option>
+                    </select> <br>
+                </div>
+                
+            </div>
+            <div class="grid-item specs">
+                    <div class="grid-item specs-1">
+                        <label class="section-label"><u>Specification</u></label>
+                     </div>   
+                     <div class="first-specs">
+                        <table class="specs-table1">
+                            <tr>
+                                <th class="specs-label">Make:</th>
+                                <td><input class="specs-Inp specs1-in" type="text" id="make" name="make" > <br></td>
+                            </tr>
+                            <tr>
+                                <th class="specs-label">Model:</th>
+                                <td><input class="specs-Inp specs1-in" type="text" id="model" name="model"><br></td>
+                            </tr>
+                            <tr>
+                                <th class="specs-label">Chassis:</th>
+                                <td> <input class="specs-Inp specs1-in" type="text" id="chassis" name="chassis"></td>
+                            </tr>
+                        </table>
+                    </div>
+                <div class="specs-2">
+                    <table>
+                        <tr>
+                            <th class="specs-label">Year:</th>
+                            <td> <input class="specs-Inp specs2-in" type="number" id="year" name="year"> <br></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th class="specs-label">Source:</th>
+                            <td>
+                                <select class="specs-Inp source-in" id="source" name="source">
+                                    <option value="">Select</option>
+                                    <option value="gas">Gas</option>
+                                    <option value="diesel">Diesel</option>
+                                    <option value="hybrid">Hybrid</option>
+                                    <option value="electric">Electric</option>
+                                    <option value="other">Other</option> 
+                                </select> 
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="specs-label">CCs/Range:</th>
+                            <td><input  type="number" id="cc_s" name="cc_s" class="specs-Inp specs2-in ccs-in"> <br></td>
+                        </tr>
+                        <tr>
+                            <th class="specs-label">HS Heading:</th>
+                            <td>
+                                <select  id="hs" name="hs" class="specs_Inp hs-in" onchange="calculateAll();">
+                                    <option value="">Select</option>
+                                    <option value="8701">8701</option>
+                                    <option value="8702">8702</option>
+                                    <option value="8703">8703</option>
+                                    <option value="8704">8704</option>
+                                    <option value="8705">8705</option>
+                                </select>
+                            </td>
+                            <td><button id="guide" onclick="guide();">HS Guide</button></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="specs-3">
+                    <table>
+                        <tr>
+                            <th class="specs-label">Age :</th>
+                            <td><input class="specs-Inp specs3-in" id="age" name="age" disabled><br></td>
+                        </tr>
+                        <tr>
+                            <th class="specs-label">Seating :</th>
+                            <td><input id="seats" class="specs-Inp specs3-in" type="number" name="seats"> </td>
+                        </tr>
+                        <tr>
+                            <th  class="specs-label">Tonnage:</th>
+                            <td><input id="weight" class="specs-Inp specs3-in" type="number" name="weight"></td>
+                        </tr>
+                        <tr>
+                            <th class="specs-label">Option:</th>
+                            <td>
+                                <select class="specs-Inp specs3-in" name="options" id="options">
+                                    <option value="">Nil</option>
+                                    <option value="concrete_mixer">Concrete Mixer</option>
+                                    <option value="crane_lorry">Crane Lorries</option>
+                                    <option value="fire_fighting">Fire Fighting</option>
+                                    <option value="mobile_derrick">Mobile Derricks</option>
+                                    <option value="other">Other</option>    
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+                </div>  
+            </div>
+            <div class="grid-item duties">
+                <label class="section-label"><u>Calculation</u></label>
+                <table style="width:100%">
+                    <tr>
+                        <th class="taxes"><u>Taxes</u></th>
+                        <th style="width:60px"><u>Rates</u></th>
+                        <th><u>Amount</u></th>
+                        <th style="width:60px"><u>Waiver (%) 
+                            <input type="checkbox" id="waiver" class="waiver" name="waiver"  onclick="check_waiver()"></u>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>Import Duty</td >
+                        <td class="tax-rate duty-input" type="text" id="iduty-rate"></td >
+                        <td class="tax-amount duty-input" id="iduty-amount"></td >
+                        <td class="tax-waiver input">
+                            <input type="number" class="id_w w-input" id="iduty-waiver" style="width:60px" disabled>
+                        </td >
+                    </tr>
+                    <tr>  
+                        <td>Eexcise Tax</td>
+                        <td class="tax-rate duty-input" id="etax-rate"></td>
+                        <td class="tax-amount duty-input" id="etax-amount"> </td>
+                        <td class="tax-waiver">
+                            <input type="number" class="id_w w-input" id="etax-waiver" style="width:60px" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>C S C</td>
+                        <td class="tax-rate duty-input" id="csc-rate"></td>
+                        <td class="tax-amount duty-input" id="csc-amount"></td>
+                        <td class="tax-waiver " >
+                            <input type="number" class="csc_w w-input" id="csc-waiver" style="width:60px" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">Vehicle Surcharge</td>
+                        <td class="tax-amount duty-input" id="vs-amount"></td>
+                        <td class="tax-waiver " ">
+                            <input type="number" class="vs-w w-input" id="vs-waiver" style="width:60px" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">VAT Base</td>
+                        <td colspan="3" class="vb-amount duty-input" id="vb-amount"></td>
+                    </tr>
+                    <tr>
+                        <td><strong>V A T</strong></td>
+                        <td class="tax-rate duty-input" id="vat-rate"></td>
+                        <td class="tax-amount duty-input" id="vat-amount"></td>
+                        <td class="tax-waiver" > 
+                            <input type="number" class="vat_w w-input" id="vat-waiver" style="width:60px" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="tduty"><b>Total Customs Duties</b></td>
+                        <td class="total-duties duty-input totals"  id="total-duties"></td>
+					</tr>
+					<tr>
+						<td colspan="2" class="tduty" ><strong class="oac" style="color:red">Over All Cost</strong></td>
+                        <td class="over-all-cost duty-input totals" id="over-all-cost"></td>
+                    </tr>
+                </table>         
+            </div>
+            <div class="grid-item courtesy">
+                <label class="courtesy-label"><small>Courtesy: Jam Ventures SVG</small></label><br>
+                <label class="courtesy-label"><small>Phone: 1(784) 532 8692 or 1(784) 493 2019</small></label><br>
+                <label class="courtesy-label"><small>Email: jamventuresvc@gmail.com</small></label> 
+
+            </div>
+        </div>
+        <script src="calculator-Data.js"></script>
+        <script src="calculator-op.js"></script>
+    </body>
+</html>

@@ -1,0 +1,274 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right,blue, yellow, green);
+   min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Bodoni MT;
+	font-weight:700;
+    font-size: 16px;
+    box-sizing: border-box;
+    
+}
+.grid{
+    display:grid;
+    border: 5px solid;
+    max-width: 650px;
+    
+    
+}
+.grid-item{
+    background-color: rgba(255 255 255 .7);
+    padding: 10px;
+}
+.title{
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.button-time {
+    display:grid;
+    grid-template-columns: 33% 33% 33%;
+}
+
+.date{
+    text-align: center;
+	align-items:top;
+	margin-top:0;
+    margin-bottom: 0;
+}
+.print{
+	text-align: center;
+	margin-top:0;
+    margin-bottom: 0;
+}
+.printButton{
+    width:70px; 
+    background-color: aqua;
+    border-radius: 5px;
+
+}
+.reset{
+	text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.resetButton{
+    width:70px;
+    background-color: rgba(221, 18, 191, 0.765);
+    border-radius: 5px;
+}
+.importer-label {
+    margin-bottom: 0;
+}
+p{
+    font-size: 14px;
+}
+
+.importer-in{
+    width: 250px;
+    margin-bottom: 0;
+}
+p{
+    margin-bottom: 0px;
+}
+.section-label{
+    display: block;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+.declaration {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.value{
+    display:grid; 
+    grid-template-columns: 45% 1fr 1fr;
+}
+.value-1 {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+
+}
+.cost-label-in {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+}
+
+.value-2{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    align-content: start;
+
+}
+.value-3{
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    align-content: start;
+}
+.value-4{
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 3;
+}
+.value-label{
+   text-align:left;
+   width:80px;
+   
+}
+.val-in{
+    width: 90px;
+    text-align: right;
+    font-family: Trebuchet MS;
+}
+.total-btn, .cif{
+    margin-top: 10px;
+}
+.total-btn{
+    margin-right: 5px;
+    background-color: bisque;
+}
+.T-and-C-label, .T-and-C-in{
+    margin-top: 20px;
+}
+.specs{
+    display:grid;
+    grid-template-columns:50% 50% ;
+     
+}
+.specs-1 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+
+}
+.first-specs{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+
+
+}
+.specs-table1 {
+    margin-left: 120px;
+}
+.specs-label{
+    text-align: left;
+    
+}
+.specs1-in{
+    width: 250px;
+    font-family: Trebuchet MS;
+    margin-right: 100px;
+}
+.specs-2{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 3;
+}
+.specs2-in {
+    width: 100px;
+    text-align: right;
+    font-family: Trebuchet MS;
+}
+.source-in{
+    width: 70px;
+    font-family: Trebuchet MS;
+}
+.hs-in{
+    width: 72px;
+    font-family: Trebuchet MS;
+}
+#year, #cc_s{
+    width:64px;
+    font-family: Trebuchet MS;
+}
+.specs-3{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 3;
+
+}
+.specs3-in{
+    width: 70px;
+    text-align: right;
+    font-family: Trebuchet MS;
+}
+#guide {
+    background-color: bisque;
+}
+#options {
+    width:110px;
+    text-align: left;
+}
+.duties{
+    display: none;    
+}
+.tax-rate{
+    text-align: center;
+    font-family: Trebuchet MS;
+}
+.tax-amount,.totals{
+    text-align: center;
+    font-family: Trebuchet MS;
+}
+.taxes {
+    text-align: left;
+}
+.tduty{
+    margin-left: 20px;
+    text-align: center;
+}
+.oac {
+    margin-left: 20px;
+}
+
+.total-duties{
+    text-decoration-line: overline underline;
+    text-decoration-style: double;
+    text-decoration-color: black;
+}/*
+#total-duties{
+    text-decoration: overline;
+}*/
+.over-all-cost{
+    color:red;
+    text-decoration-line: underline;
+    text-decoration-style: double;
+    text-decoration-color: red;
+}
+.w-input {
+	text-align:center;
+}
+.courtesy{
+    text-align: center;
+    font-size: 10px;
+    border: 1px solid black;
+}
+
+@media screen and (max-width:800px) {
+   #options {
+        width:90px;
+   }
+   .specs1-label {
+        margin-left:0px;
+
+   }
+}
+
+@media print{
+    .resetButton, .printButton, #guide {
+        display:none;
+    }
+   
+    }
+
+
