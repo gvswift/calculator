@@ -8,7 +8,7 @@ body{
     align-items: center;
     font-family: Garamond (serif); /*Bodoni MT for inputs*/
 	font-weight:700;
-    font-size: 24px;/* all font size*/
+    font-size: 20px;/* all font size*/
     font-style: italic;
     box-sizing: border-box;
     
@@ -281,7 +281,7 @@ p{
        width: 100%;
     }
 	body{
-	font-size:18px;
+	font-size:16px;
 	}
     .importer-in{
         width: 250px;
