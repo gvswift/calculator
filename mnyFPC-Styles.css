@@ -323,6 +323,9 @@ p{
     .resetButton, .printButton, #guide {
         display:none;
     }
+	body{
+	justify-content:flex-start;
+	}
    
     }
 
