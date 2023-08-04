@@ -324,8 +324,7 @@ p{
         display:none;
     }
 	body{
-	justify-content:flex-start;
-	}
+align-items:start;	}
    
     }
 
