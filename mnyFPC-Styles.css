@@ -286,6 +286,9 @@ p{
     .importer-in{
         width: 250px;
     }
+	val-in{
+	width:125px;
+	}
    #options {
         width:90px;
    }
