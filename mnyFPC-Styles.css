@@ -1,0 +1,326 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right,blue, yellow, green);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Garamond (serif); /*Bodoni MT for inputs*/
+	font-weight:700;
+    font-size: 24px;/* all font size*/
+    font-style: italic;
+    box-sizing: border-box;
+    
+}
+.grid{
+    display:grid;
+    border: 5px solid;
+    width: 85%;
+    
+    
+}
+.grid-item{
+    background-color: rgba(255 255 255 .7);
+    padding: 10px;
+}
+.title{
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.button-time {
+    display:grid;
+    grid-template-columns: 33% 33% 33%;
+}
+
+.date{
+   	align-items:top;
+	margin-top:0;
+    margin-bottom: 0;
+	font-size:16px;
+}
+.print{
+	text-align: center;
+	margin-top:0;
+    margin-bottom: 0;
+}
+.printButton{
+    width:70px; 
+    background-color: aqua;
+    border-radius: 5px;
+
+}
+.reset{
+    margin-right: 100px;
+    margin-bottom: 0;
+}
+.resetButton{
+	margin-left: 10px;
+    width:70px;
+    background-color: rgba(221, 18, 191, 0.765);
+    border-radius: 5px;
+}
+.importer-label {
+    margin-bottom: 0;
+}
+p{
+    font-size: 20px;    /*hjbhuiouuuuuuuuo*/
+}
+
+.importer-in{
+    width: 350px;
+    margin-bottom: 0;
+	font-size: 18px;
+}
+p{
+    margin-bottom: 0px;
+}
+.section-label{
+    display: block;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+.declaration {
+    margin-top: 0;
+    margin-bottom: 0;
+	font-size: 18px;
+}
+.value{
+    display:grid; 
+    grid-template-columns: 1fr 1fr;
+}
+.value-1 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+
+}
+.cost-label-in {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+}
+
+.value-2{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    align-content: start;
+
+}
+
+.value-label{
+   text-align:left;
+   width:80px;
+   
+}
+.val-in{
+    width: 115px;
+    text-align: right;
+    font-family: Trebuchet MS;
+	font-size: 18px;      /*font size*/
+}
+#autoIns {
+	height: 15px;
+	width: 15px;
+}
+.total-btn, .cif{
+    margin-top: 10px;
+}
+.total-btn{
+    margin-right: 5px;
+    background-color: rgb(13, 248, 13);
+	border-radius:7px;
+	
+}
+.T-and-C-label, .T-and-C-in{
+    margin-top: 20px;
+	font-size: 18px;
+}
+.specs{
+    display:grid;
+    grid-template-columns:1fr 1fr ;
+     
+}
+.specs-1 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+
+}
+.first-specs{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+
+
+}
+.specs-table1 {
+    margin-left: 120px;
+}
+.specs-label{
+    text-align: left;
+    
+}
+.specs1-in{
+    width: 250px;
+    font-family: Trebuchet MS;
+    margin-right: 100px;
+	font-size:18px;   /*font size*/
+}
+.specs-2{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 3;
+}
+.specs2-in {
+    width: 120px;
+    text-align: right;
+    font-family: Trebuchet MS;
+	font-size:18px; /*font size*/
+}
+.source-in{
+    width: 85px;
+    font-family: Trebuchet MS;
+	font-size:18px; /*font size*/
+}
+.hs-in{
+    width: 280px;
+    font-family: Trebuchet MS;
+	font-size:18px; /*font size*/
+}
+#year, #cc_s{
+    width:64px;
+    font-family: Trebuchet MS;
+}
+.specs-3{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 3;
+
+}
+.specs3-in{
+    width: 70px;
+    text-align: right;
+    font-family: Trebuchet MS;
+	font-size:18px; /*font size*/
+}
+#guide {
+    background-color: bisque;
+}
+#options {
+    width:110px;
+    text-align: left;
+	font-size:18px; /*font size*/
+}
+
+.duties{
+    display: none;    
+}
+
+.tax-rate{
+    text-align: center;
+    font-family: Trebuchet MS;
+}
+.tax-amount,.totals{
+    text-align: center;
+    font-family: Trebuchet MS;
+}
+/*
+.vb-amount{
+	text-align: left;
+	 font-family: Trebuchet MS;
+}
+*/
+.taxes {
+    text-align: left;
+}
+.tduty{
+    margin-left: 20px;
+    text-align: center;
+}
+.oac {
+    margin-left: 20px;
+}
+
+.total-duties{
+    text-decoration-line: overline underline;
+    text-decoration-style: double;
+    text-decoration-color: black;
+}/*
+#total-duties{
+    text-decoration: overline;
+}*/
+.over-all-cost{
+    color:red;
+    text-decoration-line: underline;
+    text-decoration-style: double;
+    text-decoration-color: red;
+}
+
+#waiver {
+	width: 15px;
+	height: 15px;
+	
+
+}
+.duty_head {
+	font-size:18px;
+}
+
+.w-input {
+	text-align:center;
+}
+
+@media screen and (max-width:700px) {
+    .grid{
+       /* max-width:400px; */
+       width: 100%;
+    }
+    .importer-in{
+        width: 250px;
+    }
+   #options {
+        width:90px;
+   }
+   .specs-table1 {
+        margin-left:0px;
+
+   }
+   .value-2{
+	   grid-column-start: 1;
+	   grid-column-end: 2;
+	   grid-row-start: 2;
+   }
+   .cost-label-in{
+	   grid-column-start: 1;
+	   grid-column-end: 2;
+	   grid-row-start: 3;
+   }
+   .first-specs{
+	   grid-column-start: 1;
+       grid-column-end: 2;
+       grid-row-start: 2;
+   }
+   .specs-2{
+	   grid-column-start: 1;
+	   grid-column-end: 2;
+   	   grid-row-start: 3;
+   }
+   .specs-3{
+	   grid-column-start: 1;
+       grid-column-end: 2;
+       grid-row-start: 4;}
+}
+
+@media print{
+    .resetButton, .printButton, #guide {
+        display:none;
+    }
+   
+    }
+
+
