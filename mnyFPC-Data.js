@@ -22,6 +22,7 @@ const ageFactors8702_8704 =[
   {age: 0, factor: 1},
   {age: 3, factor: 2},
   {age: 5, factor: 3},
+  {age: 7, factor: 4},
   {age: 11, factor: 5},
   ];
 
