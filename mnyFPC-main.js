@@ -15,9 +15,9 @@ document.getElementById("importer").addEventListener("keydown",(e)=>{
  })
 /************************************************VALUATION******************************************* */
 
-document.getElementById("fob").addEventListener("keyup",e=>{getTotal();}) 
-document.getElementById("frt").addEventListener("keyup", e =>{getTotal();})
-document.getElementById("ins").addEventListener("keyup", e =>{getTotal();})
+document.getElementById("fob").addEventListener("keyup",e=>{getTotal();hideDuties();}) 
+document.getElementById("frt").addEventListener("keyup", e =>{getTotal();hideDuties();})
+document.getElementById("ins").addEventListener("keyup", e =>{getTotal();hideDuties();})
 document.getElementById("terms").addEventListener("change",e =>{ termsFN(); getTotal(); hideDuties();})
 document.getElementById("currency").addEventListener("change",e =>{ termsFN(); getTotal(); hideDuties();})
      
